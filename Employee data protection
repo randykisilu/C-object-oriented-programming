@@ -1,0 +1,45 @@
+// EmployeeDataProtection.cpp
+// Stores and manages employee details securely using encapsulation
+
+#include <iostream>
+using namespace std;
+
+class Employee {
+private:
+    string empName;
+    string empID;
+    int basicSalary;
+    float netSalary;
+
+public:
+    void setEmployeeDetails() {
+        cout << "Enter employee name: ";
+        cin>> empName;
+        cout << "Enter employee ID: ";
+        cin >> empID;
+        cout << "Enter basic salary: ";
+        cin >> basicSalary;
+    }
+
+    // Calculates net salary with 10% allowance
+    void calculateSalary() {
+        netSalary = basicSalary + (0.10 * basicSalary);
+    }
+
+    // Displays employee information
+    void displayEmployeeDetails() {
+        cout << "\n--- Employee Details ---" << endl;
+        cout << "Name: " << empName << endl;
+        cout << "ID: " << empID << endl;
+        cout << "Basic Salary: " << basicSalary << endl;
+        cout << "Net Salary: " << netSalary << endl;
+    }
+};
+
+int main() {
+    Employee emp;
+    emp.setEmployeeDetails();
+    emp.calculateSalary();
+    emp.displayEmployeeDetails();
+    return 0;
+}
